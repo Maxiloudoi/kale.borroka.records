@@ -12,7 +12,7 @@ export const CountryList = props => (
 
 export const CountryEdit = props => (
   <Edit {...props}>
-    <SimpleForm>
+    <SimpleForm defaultValue={{role: "ADMIN"}}>
       <TextInput source="id" />
       <TextInput source="country" />
       <TextInput source="tag" />
@@ -22,7 +22,7 @@ export const CountryEdit = props => (
 
 export const CountryCreate = props => (
   <Create {...props}>
-    <SimpleForm>
+    <SimpleForm defaultValue={{role: "ADMIN"}}>
       <TextInput source="id" />
       <TextInput source="country" />
       <TextInput source="tag" />

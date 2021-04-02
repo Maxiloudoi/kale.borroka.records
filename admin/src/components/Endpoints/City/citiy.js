@@ -17,20 +17,18 @@ export const CityList = (props) => (
   </List>
 );
 
-export const CityEdit = (props) => (
+export const CityEdit = ({permissions, ...props}) => (
   <Edit {...props}>
-    <SimpleForm>
-      <TextInput source="id" />
-      <TextInput source="city" />
+    <SimpleForm defaultValue={{role: "ADMIN"}}>
+        {permissions === "ADMIN" && <TextInput source="id"/> && <TextInput source="city" /> }
     </SimpleForm>
   </Edit>
 );
 
-export const CityCreate = (props) => (
+export const CityCreate = ({permissions, ...props}) => (
   <Create {...props}>
-    <SimpleForm>
-      <TextInput source="id" />
-      <TextInput source="city" />
-    </SimpleForm>
+      <SimpleForm defaultValue={{role: "ADMIN"}}>
+          {permissions === "ADMIN" && <TextInput source="id"/> && <TextInput source="city" /> }
+      </SimpleForm>
   </Create>
 );

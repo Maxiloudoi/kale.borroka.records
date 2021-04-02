@@ -3,10 +3,14 @@ const Artist = require("../models/Artist");
 const router = express.Router();
 const Song = require("../models/Song");
 const auth = require("../middlewares/auth");
+const { getPagination, getPagingData} = require('./function/pagination');
 
 router.get("/", async (req, res) => {
+
+  const { page, size } = req.query;
   try {
-    const result = await Song.findAll({
+    const { limit, offset } = getPagination(page, size);
+    const allSongs = await Song.findAndCountAll({
       attributes: ["id", "name"],
       include: [
         {
@@ -14,14 +18,17 @@ router.get("/", async (req, res) => {
           attributes: ["name"],
         },
       ],
-      limit: 10,
+      limit,
+      offset
     });
+
+    const result = getPagingData(allSongs,page,limit)
     res.set({
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Expose-Headers": "X-Total-Count",
-      "X-Total-Count": await Song.count(),
+      "X-Total-Count": allSongs.count,
     });
-    res.status(200).json(result);
+    res.status(200).json([result]);
   } catch (err) {
     res.status(400).json(err);
   }

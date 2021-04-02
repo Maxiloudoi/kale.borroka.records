@@ -25,7 +25,7 @@ export const ArtistList = (props) => (
 
 export const ArtistEdit = (props) => (
   <Edit {...props}>
-    <SimpleForm>
+    <SimpleForm defaultValue={{role: "ADMIN"}}>
       <TextInput source="id" />
       <TextInput source="name" />
       <TextInput source="Cities.city" />
@@ -36,7 +36,7 @@ export const ArtistEdit = (props) => (
 
 export const ArtistCreate = (props) => (
   <Create {...props}>
-    <SimpleForm>
+    <SimpleForm defaultValue={{role: "ADMIN"}}>
       <TextInput source="id" />
       <TextInput source="name" />
       <ReferenceArrayInput source="CityId" reference="cities">

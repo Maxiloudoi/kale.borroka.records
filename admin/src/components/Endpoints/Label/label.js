@@ -23,7 +23,7 @@ export const LabelList = (props) => (
 
 export const LabelEdit = (props) => (
   <Edit {...props}>
-    <SimpleForm>
+    <SimpleForm defaultValue={{role: "ADMIN"}}>
       <TextInput source="id" />
       <TextInput source="name" />
       <TextInput source="logo" />
@@ -34,7 +34,7 @@ export const LabelEdit = (props) => (
 
 export const LabelCreate = (props) => (
   <Create {...props}>
-    <SimpleForm>
+    <SimpleForm defaultValue={{role: "ADMIN"}}>
       <TextInput source="id" />
       <TextInput source="name" />
       <TextInput source="logo" />

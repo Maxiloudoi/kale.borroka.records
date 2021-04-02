@@ -7,7 +7,6 @@ import {
   ShowGuesser,
 } from "react-admin";
 import { Dashboard } from "./components/Dashboard/Dashboard";
-import { dataProvider } from "./dataProvider";
 import { AlbumCreate, AlbumList } from "./components/Endpoints/Album/album";
 import { ArtistCreate, ArtistList } from "./components/Endpoints/Artist/artist";
 import AlbumIcon from "@material-ui/icons/Album";
@@ -62,6 +61,7 @@ import {
 } from "./components/Endpoints/Country/country";
 import authProvider from "./components/authProvider";
 import { createMuiTheme } from "@material-ui/core/styles";
+import {dataProvider} from "./dataProvider";
 
 const theme = createMuiTheme({
   palette: {
@@ -74,10 +74,10 @@ const App = () => {
     <>
       <Admin
         dashboard={Dashboard}
-        dataProvider={dataProvider}
         disableTelemetry
         authProvider={authProvider}
         theme={theme}
+       dataProvider={dataProvider}
       >
         <Resource
           name="albums"

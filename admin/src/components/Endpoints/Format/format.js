@@ -19,7 +19,7 @@ export const FormatList = (props) => (
 
 export const FormatEdit = (props) => (
   <Edit {...props}>
-    <SimpleForm>
+    <SimpleForm defaultValue={{role: "ADMIN"}}>
       <TextInput source="id" />
       <TextInput source="name" />
     </SimpleForm>
@@ -28,7 +28,7 @@ export const FormatEdit = (props) => (
 
 export const FormatCreate = (props) => (
   <Create {...props}>
-    <SimpleForm>
+    <SimpleForm defaultValue={{role: "ADMIN"}}>
       <TextInput source="id" />
       <TextInput source="name" />
     </SimpleForm>

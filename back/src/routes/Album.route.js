@@ -67,8 +67,9 @@ router.get("/:id", async (req, res) => {
           through: { attributes: [], order: ["track", "ASC"] },
         },
         { model: Label, attributes: ["name"], through: { attributes: [] } },
+        { model: Video, attributes: ['youtube_url'], through:  {attributes: []} },
       ],
-      order: [[Label, "name", "ASC"]],
+      order: [[Label, "name", "ASC"], [Song, "track", "ASC"]],
     });
     res.set({
       "Access-Control-Allow-Origin": "*",
@@ -100,7 +101,7 @@ router.post("/", auth("ADMIN"), async (req, res) => {
       ArtistId,
       StyleId,
     });
-    await addTroughTableTracklist(tracklist, Song, postAlbum);
+    await addTroughTableTracklist(tracklist, ArtistId, Song, postAlbum);
     await postLabelInThroughTable(labels, Label, postAlbum);
     await postVideoInThroughTable(videos, Video, postAlbum);
     res.status(200).json(postAlbum);

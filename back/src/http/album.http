@@ -6,6 +6,7 @@ GET http://localhost:5050/api/album/c56a446c-089e-4ea3-8425-c25d8a4b9eab HTTP/1.
 
 ### POST ALBUM
 POST http://localhost:5050/api/albums HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImRhZG91IiwiZW1haWwiOiJrYWxlLWJvcnJva2EtcmVjb3Jkc0Bwcm90b25tYWlsLmNvbSIsInVzZXJ0eXBlIjoiQURNSU4iLCJpYXQiOjE2MTcyNzkwMTksImV4cCI6MTYxNzI4OTgxOX0.ehxaszGvEhV3WlJZ0Rx8Emf60g4LiX2LxdJgHcmDE1M
 Content-Type: application/json
 
 {
@@ -13,17 +14,17 @@ Content-Type: application/json
     "note": "Second album for Harbour Rebels",
     "folder": "https://www.coreandco.fr/upload/pics/albums2/big/krav-boca-city-hackers-7844.jpg",
     "ArtistId": "d1cab072-2e64-46b0-9318-ffdbef497736",
-    "StyleId": "ed0fab94-d6d0-4756-bf1a-ba116bdeef54",
+    "StyleId": "73ea6f65-dc8b-4315-8149-d00996709d0e",
     "tracklist": [
-        {"name":"Intro", "track": 1, "ArtistId": "d1cab072-2e64-46b0-9318-ffdbef497736"}, 
-        {"name":"Souterrain feat Chata Flores", "track": 2, "ArtistId": "d1cab072-2e64-46b0-9318-ffdbef497736"},
-        {"name":"Kravmikaz", "track": 3, "ArtistId": "d1cab072-2e64-46b0-9318-ffdbef497736"},
-        {"name":"Camtar", "track": 4, "ArtistId": "d1cab072-2e64-46b0-9318-ffdbef497736"},
-        {"name":"Crust feat My Own Voice, Matrak Attakk", "track": 5, "ArtistId": "d1cab072-2e64-46b0-9318-ffdbef497736"},
-        {"name":"GasMask feat Speira", "track": 6, "ArtistId": "d1cab072-2e64-46b0-9318-ffdbef497736"},
-        {"name":"Poison feat Zafina", "track": 7, "ArtistId": "d1cab072-2e64-46b0-9318-ffdbef497736"},
-        {"name":"Carte Postale feat Al Nasser", "track": 8, "ArtistId": "d1cab072-2e64-46b0-9318-ffdbef497736"},
-        {"name":"City Hackers feat Aeon", "track": 9, "ArtistId": "d1cab072-2e64-46b0-9318-ffdbef497736" }
+        {"name":"Intro", "track": 1},
+        {"name":"Souterrain feat Chata Flores", "track": 2},
+        {"name":"Kravmikaz", "track": 3},
+        {"name":"Camtar", "track": 4},
+        {"name":"Crust feat My Own Voice, Matrak Attakk", "track": 5},
+        {"name":"GasMask feat Speira", "track": 6},
+        {"name":"Poison feat Zafina", "track": 7},
+        {"name":"Carte Postale feat Al Nasser", "track": 8},
+        {"name":"City Hackers feat Aeon", "track": 9}
     ],
     "labels": [
         {"name":"Rumagna Sgroza" },

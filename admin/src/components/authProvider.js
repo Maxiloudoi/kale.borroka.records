@@ -13,6 +13,8 @@ const authProvider = {
       const auth = await response.json();
       const token = auth.token;
       const decodeToken = jwt_decode(token);
+      localStorage.setItem("role", decodeToken.usertype);
+
       if (response.status < 200 || response.status >= 300) {
         throw new Error(response.statusText);
       }
@@ -41,13 +43,17 @@ const authProvider = {
     return localStorage.getItem("auth") ? Promise.resolve() : Promise.reject();
   },
   // called when the user navigates to a new location, to check for permissions / roles
-  getPermissions: () => Promise.resolve(),
+  getPermissions: () =>{
+    const role = localStorage.getItem('role');
+    if (role === "ADMIN") {
+      return Promise.resolve(role);
+    }
+  },
 
   getIdentity: () => {
     try {
       const { id, user } = JSON.parse(localStorage.getItem("auth"));
       const username = user;
-      console.log(user.username);
       return Promise.resolve({ id, username });
     } catch (error) {
       return Promise.reject(error);

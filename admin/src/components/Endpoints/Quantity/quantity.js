@@ -21,7 +21,7 @@ export const QuantityList = (props) => (
 
 export const QuantityEdit = (props) => (
   <Edit {...props}>
-    <SimpleForm>
+    <SimpleForm defaultValue={{role: "ADMIN"}}>
       <TextInput source="id" />
       <NumberInput source="quantity" />
     </SimpleForm>
@@ -30,7 +30,7 @@ export const QuantityEdit = (props) => (
 
 export const QuantityCreate = (props) => (
   <Create {...props}>
-    <SimpleForm>
+    <SimpleForm defaultValue={{role: "ADMIN"}}>
       <TextInput source="id" />
       <NumberInput source="quantity" />
     </SimpleForm>

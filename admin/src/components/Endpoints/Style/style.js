@@ -19,7 +19,7 @@ export const StyleList = (props) => (
 
 export const StyleEdit = (props) => (
   <Edit {...props}>
-    <SimpleForm>
+    <SimpleForm defaultValue={{role: "ADMIN"}}>
       <TextInput source="id" />
       <TextInput source="name" />
     </SimpleForm>
@@ -28,7 +28,7 @@ export const StyleEdit = (props) => (
 
 export const StyleCreate = (props) => (
   <Create {...props}>
-    <SimpleForm>
+    <SimpleForm defaultValue={{role: "ADMIN"}}>
       <TextInput source="id" />
       <TextInput source="name" />
     </SimpleForm>

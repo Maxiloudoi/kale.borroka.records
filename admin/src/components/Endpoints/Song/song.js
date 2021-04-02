@@ -8,10 +8,13 @@ import {
   SimpleForm,
   TextField,
   TextInput,
+  Pagination
 } from "react-admin";
 
+const PostPagination = props => <Pagination rowsPerPageOptions={[10, 25, 50, 100]} {...props} />;
+
 export const SongList = (props) => (
-  <List {...props}>
+  <List {...props} pagination={<PostPagination />} >
     <Datagrid rowClick="edit">
       <TextField source="id" />
       <TextField source="name" />
@@ -21,7 +24,7 @@ export const SongList = (props) => (
 );
 export const SongEdit = (props) => (
   <Edit {...props}>
-    <SimpleForm>
+    <SimpleForm defaultValue={{role: "ADMIN"}}>
       <TextInput source="id" />
       <TextInput source="name" />
       <TextInput source="Artist.name" />
@@ -31,7 +34,7 @@ export const SongEdit = (props) => (
 
 export const SongCreate = (props) => (
   <Create {...props}>
-    <SimpleForm>
+    <SimpleForm defaultValue={{role: "ADMIN"}}>
       <TextInput source="id" />
       <TextInput source="name" />
       <ReferenceArrayInput source="ArtistId" reference="artists" allowEmpty>

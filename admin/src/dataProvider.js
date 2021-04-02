@@ -9,6 +9,7 @@ const httpClient = (url, options = {}) => {
   // add your own headers here
   options.headers.set("X-Total-Count", "100");
   options.headers.set("Authorization", `Bearer ${token}`);
+
   return fetchUtils.fetchJson(url, options);
 };
 

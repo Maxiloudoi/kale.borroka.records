@@ -21,7 +21,7 @@ export const PriceList = (props) => (
 
 export const PriceEdit = (props) => (
   <Edit {...props}>
-    <SimpleForm>
+    <SimpleForm defaultValue={{role: "ADMIN"}}>
       <TextInput source="id" />
       <NumberInput source="price" />
     </SimpleForm>
@@ -30,7 +30,7 @@ export const PriceEdit = (props) => (
 
 export const PriceCreate = (props) => (
   <Create {...props}>
-    <SimpleForm>
+    <SimpleForm defaultValue={{role: "ADMIN"}}>
       <TextInput source="id" />
       <NumberInput source="price" />
     </SimpleForm>
